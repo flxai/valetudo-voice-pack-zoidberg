@@ -20,10 +20,10 @@ jobs:
       - name: build
         run: ./create_voicepack.sh
       - name: artifact file
-        run: ls -t1 voice-pack-zoidberg-*.tar.gz | tail -1
+        run: echo artifact_file=$(ls -t1 voice-pack-zoidberg-*.tar.gz | tail -1)  >> $GITHUB_OUTPUT
         id: artifact_file
       - name: version
-        run: ls -t1 voice-pack-zoidberg-*.tar.gz | tail -1 | sed -r 's/voice-pack-zoidberg-([0-9a-fv.]+)\.tar\.gz/\1/'
+        run: echo version=$(ls -t1 voice-pack-zoidberg-*.tar.gz | tail -1 | sed -r 's/voice-pack-zoidberg-([0-9a-fv.]+)\.tar\.gz/\1/') >> $GITHUB_OUTPUT
         id: version
       - name: release
         id: create_release
@@ -41,7 +41,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./${{ steps.artifact_file.outputs.stdout }}
-          asset_name: ${{ steps.artifact_file.outputs.stdout }}
+          asset_path: ./${{ steps.artifact_file.outputs.artifact_file }}
+          asset_name: ${{ steps.artifact_file.outputs.artifact_file }}
           asset_content_type: application/gzip
 
