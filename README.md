@@ -8,9 +8,9 @@ Works at least with `L10 Pro`, `Z10 Pro`, `W10`, and `D9`.
 
 1. In Valetudo go to *Robot Options* → *Misc Options*
 2. Enter the following information in the *Voice packs* section:
-  * URL: `...`
-  * Language Code: `...`
-  * Hash: `...`
+  * URL: `https://github.com/flxai/valetudo-voice-pack-zoidberg/releases/download/v1.0.9/voice-pack-zoidberg-v1.0.9.tar.gz`
+  * Language Code: `ZOIDBERG`
+  * Hash: `333edbdc4b63a9e785e372661e899d12`
 3. Click <kbd>Set Voice Pack</kbd>
   * Might take a while and UI might be unresponsive
 
