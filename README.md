@@ -1,4 +1,3 @@
-# valetudo-voice-pack-zoidberg
 # Zoidberg voice pack for Valetudo vacuum robots
 
 [Valetudo](https://github.com/Hypfer/Valetudo) voice pack to let your vacuum robot speak and scream like Zoidberg.
