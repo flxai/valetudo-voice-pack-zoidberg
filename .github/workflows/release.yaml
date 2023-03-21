@@ -17,7 +17,7 @@ jobs:
       - name: build
         run: ./create_voicepack.sh
       - name: version
-        run: ls -t1 voice-pack-zoidberg-*.tar.gz | tail -1 | sed -r 's/voice-pack-zoidberg-([0-9a-f]+)\.tar\.gz/\1/'
+        run: ls -t1 voice-pack-zoidberg-*.tar.gz | tail -1 | sed -r 's/voice-pack-zoidberg-([0-9a-fv.]+)\.tar\.gz/\1/'
         id: version
       - name: release
         id: create_release
