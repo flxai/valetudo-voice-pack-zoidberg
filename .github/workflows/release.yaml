@@ -41,7 +41,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./${{ steps.artifact_file.outputs.* }}
-          asset_name: ${{ steps.artifact_file.outputs.* }}
+          asset_path: ./${{ steps.artifact_file.outputs.stdout }}
+          asset_name: ${{ steps.artifact_file.outputs.stdout }}
           asset_content_type: application/gzip
 
