@@ -36,7 +36,7 @@ tid=$(git tag --points-at HEAD)
 [[ -z "$tid" || $? -gt 0 ]] || vid="$tid"
 
 # Pack release file
-tar czvf "voice-pack-zoidberg-$vid.tar.gz" "$td"
+tar czvf "voice-pack-zoidberg-$vid.tar.gz" -C "$td" .
 
 # Remove junk
 rm "$tf"
