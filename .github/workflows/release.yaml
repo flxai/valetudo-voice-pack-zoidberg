@@ -16,7 +16,7 @@ jobs:
           fetch-depth: 0
       - name: build
         run: ./create_voicepack.sh
-      - name: artifact file
+      - name: artifact_file
         run: ls -t1 voice-pack-zoidberg-*.tar.gz | tail -1
         id: artifact_file
       - name: version
@@ -38,7 +38,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ${{ steps.version.outputs.artifact_file }}
-          asset_name: ${{ steps.version.outputs.artifact_file }}
+          asset_path: ${{ steps.artifact_file.outputs.artifact_file }}
+          asset_name: ${{ steps.artifact_file.outputs.artifact_file }}
           asset_content_type: application/gzip
 
